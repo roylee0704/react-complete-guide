@@ -8,8 +8,15 @@ export default () => {
       { name: 'Roy', age: 30 },
       { name: 'Earng', age: 27 },
       { name: 'SanSan', age: 0.6 }
-    ]
+    ],
   });
+
+
+  const [otherState] = useState({
+    otherState: 'some other value'
+  });
+
+  console.log(personsState, otherState);
 
   const switchNameHandler = () => {
     setPersonsState({
@@ -17,7 +24,7 @@ export default () => {
         { name: 'Roy Lee', age: 31 },
         { name: 'Earng', age: 27 },
         { name: 'SanSan Lee', age: 0.6 }
-      ]
+      ],
     });
   };
 
