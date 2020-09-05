@@ -38,11 +38,22 @@ export default () => {
     });
   }
 
+  // inline-style: 
+  // - pros: to scope the style to targeted element
+  // - cons: limitation
+  const style = {
+    backgroundColor: 'white',
+    padding: '8px',
+    font: 'inherit',
+    border: '1px solid blue',
+    cursor: 'pointer'
+  }
+
   return (
     <div className="App">
       <h1>Hi I'm a React App</h1>
       <p>This is really working</p>
-      <button onClick={() => switchNameHandler('Siong Tai!')}>Switch Name</button>
+      <button style={style} onClick={() => switchNameHandler('Siong Tai!')}>Switch Name</button>
 
       <Person
         name={personsState.persons[0].name}
