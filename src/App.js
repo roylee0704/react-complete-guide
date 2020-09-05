@@ -28,6 +28,16 @@ export default () => {
     });
   };
 
+  const nameChangedHandler = (event) => {
+    setPersonsState({
+      persons: [
+        { name: 'Roy', age: 31 },
+        { name: event.target.value, age: 27 },
+        { name: 'SanSan', age: 0.6 }
+      ],
+    });
+  }
+
   return (
     <div className="App">
       <h1>Hi I'm a React App</h1>
@@ -43,6 +53,7 @@ export default () => {
         name={personsState.persons[1].name}
         age={personsState.persons[1].age}
         click={switchNameHandler.bind(this, 'Wife')}
+        change={nameChangedHandler}
       >
         Hobby: Reading books..
       </Person>
