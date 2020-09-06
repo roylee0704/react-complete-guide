@@ -5,38 +5,69 @@ import Person from './Person/Person';
 export default () => {
   const [personsState, setPersonsState] = useState({
     persons: [
-      { name: 'Roy', age: 30 },
-      { name: 'Earng', age: 27 },
-      { name: 'SanSan', age: 0.6 }
+      { id: 'abc', name: 'Roy', age: 30 },
+      { id: 'def', name: 'Earng', age: 27 },
+      { id: 'ghi', name: 'SanSan', age: 0.6 }
     ],
   });
 
-
-  const [otherState] = useState({
-    otherState: 'some other value'
+  const [showPersonsState, setShowPersonsState] = useState({
+    showPersons: false,
   });
 
-  console.log(personsState, otherState);
+  const nameChangedHandler = (event, id) => {
+    const personIndex = personsState.persons.findIndex(person => person.id === id)
+    const person = {
+      ...personsState.persons[personIndex]
+    };
 
-  const switchNameHandler = (newName) => {
-    setPersonsState({
-      persons: [
-        { name: newName, age: 31 },
-        { name: 'Earng', age: 27 },
-        { name: 'SanSan', age: 0.6 }
-      ],
-    });
-  };
+    person.name = event.target.value;
+    const persons = [...personsState.persons];
+    persons[personIndex] = person;
 
-  const nameChangedHandler = (event) => {
     setPersonsState({
-      persons: [
-        { name: 'Roy', age: 31 },
-        { name: event.target.value, age: 27 },
-        { name: 'SanSan', age: 0.6 }
-      ],
+      persons
     });
   }
+
+  const togglePersonsHandler = () => {
+    setShowPersonsState({
+      showPersons: !showPersonsState.showPersons
+    });
+  }
+
+  const deletePersonHandler = (id) => {
+    const personIndex = personsState.persons.findIndex(person => person.id === id);
+    const persons = [...personsState.persons];
+    persons.splice(personIndex, 1);
+
+    setPersonsState({
+      persons
+    });
+  }
+
+  const listPerson = (show) => {
+    if (!show) {
+      return null;
+    }
+
+    return (
+      <div>
+        {
+          personsState.persons.map(person =>
+            <Person
+              key={person.id}
+              name={person.name}
+              age={person.age}
+              change={(event) => nameChangedHandler(event, person.id)}
+              click={() => deletePersonHandler(person.id)}
+            />
+          )
+        }
+      </div>
+    )
+  };
+
 
   // inline-style: 
   // - pros: to scope the style to targeted element
@@ -53,27 +84,8 @@ export default () => {
     <div className="App">
       <h1>Hi I'm a React App</h1>
       <p>This is really working</p>
-      <button style={style} onClick={() => switchNameHandler('Siong Tai!')}>Switch Name</button>
-
-      <Person
-        name={personsState.persons[0].name}
-        age={personsState.persons[0].age}
-      />
-
-      <Person
-        name={personsState.persons[1].name}
-        age={personsState.persons[1].age}
-        click={switchNameHandler.bind(this, 'Wife')}
-        change={nameChangedHandler}
-      >
-        Hobby: Reading books..
-      </Person>
-
-      <Person
-        name={personsState.persons[2].name}
-        age={personsState.persons[2].age}
-      />
-
+      <button style={style} onClick={togglePersonsHandler}>Toggle Persons</button>
+      {listPerson(showPersonsState.showPersons)}
     </div>
   );
 };
