@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import Persons from './components/Persons/Persons';
+import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 export default () => {
   const [personsState, setPersonsState] = useState({
@@ -60,11 +61,8 @@ export default () => {
 
   return (
     <div className="App">
-      <h1>Hi I'm a React App</h1>
-      <p>This is really working</p>
-      <button style={style} onClick={togglePersonsHandler}>Toggle Persons</button>
+      <Cockpit title="App title" clicked={togglePersonsHandler} />
       <Persons persons={personsState.persons} show={showPersonsState.showPersons} clicked={deletePersonHandler} changed={nameChangedHandler} />
-
     </div>
   );
 };
