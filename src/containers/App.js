@@ -3,7 +3,7 @@ import './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
-export default () => {
+export default (props) => {
   const [personsState, setPersonsState] = useState({
     persons: [
       { id: 'abc', name: 'Roy', age: 30 },
@@ -61,7 +61,7 @@ export default () => {
 
   return (
     <div className="App">
-      <Cockpit title="App title" clicked={togglePersonsHandler} />
+      <Cockpit title={props.appTitle} clicked={togglePersonsHandler} />
       <Persons persons={personsState.persons} show={showPersonsState.showPersons} clicked={deletePersonHandler} changed={nameChangedHandler} />
     </div>
   );
