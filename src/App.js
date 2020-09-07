@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import Person from './Person/Person';
+import Persons from './components/Persons/Persons';
 
 export default () => {
   const [personsState, setPersonsState] = useState({
@@ -46,28 +46,6 @@ export default () => {
     });
   }
 
-  const listPerson = (show) => {
-    if (!show) {
-      return null;
-    }
-
-    return (
-      <div>
-        {
-          personsState.persons.map(person =>
-            <Person
-              key={person.id}
-              name={person.name}
-              age={person.age}
-              change={(event) => nameChangedHandler(event, person.id)}
-              click={() => deletePersonHandler(person.id)}
-            />
-          )
-        }
-      </div>
-    )
-  };
-
 
   // inline-style: 
   // - pros: to scope the style to targeted element
@@ -85,7 +63,8 @@ export default () => {
       <h1>Hi I'm a React App</h1>
       <p>This is really working</p>
       <button style={style} onClick={togglePersonsHandler}>Toggle Persons</button>
-      {listPerson(showPersonsState.showPersons)}
+      <Persons persons={personsState.persons} show={showPersonsState.showPersons} clicked={deletePersonHandler} changed={nameChangedHandler} />
+
     </div>
   );
 };

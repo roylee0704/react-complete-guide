@@ -1,9 +1,25 @@
-<mxfile host="7d1d423d-1015-4d54-91b9-7a0c9ecc4178" modified="2020-09-06T12:51:32.442Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.48.2 Chrome/78.0.3904.130 Electron/7.3.2 Safari/537.36" etag="msfJw6Ht2Q2Mpaz747xT" version="13.1.3">
+<mxfile host="7d1d423d-1015-4d54-91b9-7a0c9ecc4178" modified="2020-09-06T14:52:08.757Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.48.2 Chrome/78.0.3904.130 Electron/7.3.2 Safari/537.36" etag="fn1K3L3CdVHzr4s28PBm" version="13.1.3">
     <diagram id="6hGFLwfOUW9BJ-s0fimq" name="Component Lifecycle">
-        <mxGraphModel dx="1196" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="746" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="44" target="45">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1160" y="1110"/>
+                            <mxPoint x="1160" y="1005"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="56" value="update child compontent prop" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="54">
+                    <mxGeometry x="0.1823" y="3" relative="1" as="geometry">
+                        <mxPoint x="-37" y="10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="44" value="App.js" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1200" y="1080" width="120" height="60" as="geometry"/>
+                </mxCell>
                 <mxCell id="41" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#336600;" vertex="1" parent="1">
                     <mxGeometry x="100" y="43" width="640" height="425" as="geometry"/>
                 </mxCell>
@@ -128,6 +144,58 @@
                 </mxCell>
                 <mxCell id="39" value="DO: Last-minute DOM ops&lt;br&gt;DON'T: Cause Side-Effects" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="1394" y="480" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="45" target="44">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="45" target="46">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="update child compontent prop" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="55">
+                    <mxGeometry x="0.0006" y="-5" relative="1" as="geometry">
+                        <mxPoint x="-55" y="-2.1400000000000006" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="45" value="Persons" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1200" y="960" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="46" target="45">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="Person" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1200" y="850" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="49" target="46">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="onChange()" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1200" y="710" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="User enters text to textbox, triggers onChange listener" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="1325" y="800" width="300" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="listener forwards by triggering handlers of higher level" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="1325" y="930" width="300" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="handler setState, and triggers update lifecycle hook" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="1330" y="1042.5" width="290" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="69" target="70">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="935" y="1090" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="920" y="1108"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="69" value="Persons" style="pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folder;" vertex="1" parent="1">
+                    <mxGeometry x="895" y="1030" width="50" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="Person" style="pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folder;" vertex="1" parent="1">
+                    <mxGeometry x="959" y="1085" width="50" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="higher level component" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="850" y="1000" width="140" height="20" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
