@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Aux from '../../hoc/Aux';
 
 const cockpit = props => {
     console.log('[Cockpit] rendering...')
@@ -34,11 +35,11 @@ const cockpit = props => {
     }
 
     return (
-        <div>
+        <Aux>
             <h1>{props.title}</h1>
             <p>This is really working</p>
             <button style={style} onClick={props.clicked}>Toggle Persons</button>
-        </div>
+        </Aux>
     );
 }
 
