@@ -1,6 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-export default (props) => {
+const cockpit = props => {
+    console.log('[Cockpit] rendering...')
+
+    // []        = componentDidMount + unmounted
+    // undefined = componentDidMount + componentDidUpdate (runs on every update cycle)
+    useEffect(() => {
+        console.log('[Cockpit] useEffect');
+
+        setTimeout(() => {
+            console.log('[Cockpit] Saved data to the cloud!')
+        }, 1000);
+
+        return () => {
+            console.log('[Cockpit] clean up work in useEffect!')
+        }
+    }, []);
+
+    useEffect(() => {
+        console.log('[Cockpit] 2nd useEffect')
+
+        return () => {
+            console.log('[Cockpit] clean up work in 2nd useEffect')
+        }
+    });
 
     const style = {
         backgroundColor: 'white',
@@ -18,3 +41,5 @@ export default (props) => {
         </div>
     );
 }
+
+export default React.memo(cockpit);

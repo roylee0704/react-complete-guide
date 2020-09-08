@@ -5,6 +5,8 @@ import React from 'react';
 import './Person.css';
 
 export default (props) => {
+    console.log('[Person] rendering...')
+
     return (
         <div className="Person">
             <p onClick={props.click}>My name is {props.name}, I'm {props.age} years old.</p>
